@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
+import { getCampers, getAllCampers } from "./api/campersAPI";
 
 function App() {
   return (
@@ -21,5 +23,6 @@ function App() {
     </div>
   );
 }
-
+console.log(getAllCampers());
+console.loget(getCampers());
 export default App;
