@@ -1,4 +1,4 @@
-import { HeaderWrapper, Logo, ListItem, ListNav, ItemsLink, SpanName } from './Header.styled';
+import { HeaderWrapper, Logo, ListItem, ListNav, ItemsLink, SpanName } from './Header.module';
 
 const Header = () => {
   return (
