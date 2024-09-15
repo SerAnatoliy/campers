@@ -53,7 +53,7 @@ const CatalogPage = () => {
         <ListWrapper>
           {isLoading && <Loaders />}
           {error && <Errors>error:{`${error}`}</Errors>}
-          {campers.length !== 0 ? (
+          {campers?.length !== 0 ? (
             <CatalogList campers={filtredCampers.length === 0 ? campers : filtredCampers} toggleModal={toggleModal} />
           ) : (
             <NoInform text="no information" />

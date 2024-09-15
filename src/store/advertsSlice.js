@@ -32,17 +32,29 @@ const rejectedAction = (state, { payload }) => {
 
 const handleFulfilledGet = (state, { payload }) => {
   state.advert.campers = payload;
-  state.advert.length = payload.length;
+  if (Array.isArray(payload)) {
+    state.advert.length = payload.length;
+  } else {
+    state.advert.length = 0;
+  }
 };
-
 const handleFulfilledLoad = (state, { payload }) => {
-  state.advert.campers.push(...payload);
-  state.advert.length = payload.length;
+  if (Array.isArray(payload)) {
+    state.advert.campers.push(...payload);
+    state.advert.length = state.advert.campers.length;
+  } else {
+    state.advert.length = state.advert.campers.length;
+  }
 };
 
 const handleFulfilledGetAll = (state, { payload }) => {
   state.filters.items = payload;
-  state.advert.length = payload.length;
+
+  if (Array.isArray(payload)) {
+    state.advert.length = payload.length;
+  } else {
+    state.advert.length = 0;
+  }
 };
 
 //-----------------------
