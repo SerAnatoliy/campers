@@ -6,6 +6,7 @@ import { ContainerApp } from './App.module';
 import Loaders from '../Loaders/Loaders';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
               <Route index element={<HomePage />} />
               {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
             </Route>
-            {/* <Route path="/catalog" element={<CatalogPage />} /> */}
+            <Route path="/catalog" element={<CatalogPage />} />
           </Route>
           {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>

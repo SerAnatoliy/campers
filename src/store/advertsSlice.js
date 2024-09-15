@@ -1,24 +1,24 @@
-import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { fetchCampers, loadMoreCampers, fetchCamperAll } from "./operations";
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { fetchCampers, loadMoreCampers, fetchCamperAll } from './operations';
 
 const status = {
-  PENDING: "pending",
-  FULFILLED: "fulfilled",
-  REJECTED: "rejected",
+  PENDING: 'pending',
+  FULFILLED: 'fulfilled',
+  REJECTED: 'rejected',
 };
 
 const thunks = [fetchCampers, loadMoreCampers, fetchCamperAll];
 
-const createStatus = (status) => isAnyOf(...thunks.map((el) => el[status]));
+const createStatus = status => isAnyOf(...thunks.map(el => el[status]));
 
 //-------------------
 
-const pendingAction = (state) => {
+const pendingAction = state => {
   state.isLoading = true;
   state.error = null;
 };
 
-const fulfilledAction = (state) => {
+const fulfilledAction = state => {
   state.isLoading = false;
   state.error = null;
 };
@@ -48,7 +48,7 @@ const handleFulfilledGetAll = (state, { payload }) => {
 //-----------------------
 
 const advertsSlice = createSlice({
-  name: "adverts",
+  name: 'adverts',
   initialState: {
     advert: {
       campers: [],
@@ -66,7 +66,7 @@ const advertsSlice = createSlice({
       state.filters.filters = payload;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     const { PENDING, FULFILLED, REJECTED } = status;
     builder
       .addCase(fetchCampers.fulfilled, handleFulfilledGet)

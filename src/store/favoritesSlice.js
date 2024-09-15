@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { createSlice } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const favoritesSlice = createSlice({
-  name: "favorites",
+  name: 'favorites',
   initialState: {
     items: [],
   },
@@ -12,18 +12,15 @@ const favoritesSlice = createSlice({
       state.items.push(payload);
     },
     deleteFavorite(state, { payload }) {
-      state.items = state.items.filter((item) => item._id !== payload._id);
+      state.items = state.items.filter(item => item._id !== payload._id);
     },
   },
 });
 
 const persistConfig = {
-  key: "favorites",
+  key: 'favorites',
   storage,
 };
 
 export const { addFavorite, deleteFavorite } = favoritesSlice.actions;
-export const persistedReducer = persistReducer(
-  persistConfig,
-  favoritesSlice.reducer
-);
+export const persistedReducer = persistReducer(persistConfig, favoritesSlice.reducer);
