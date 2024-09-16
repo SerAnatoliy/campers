@@ -80,11 +80,11 @@ const FiltersBar = data => {
     setForm({ ...form, vehicleType: value });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(addFilters({ location, transmission, details, form }));
-    dispatch(fetchCamperAll(1));
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   dispatch(addFilters({ location, transmission, details, form }));
+  //   dispatch(fetchCamperAll(1));
+  // };
 
   const handleReset = e => {
     e.preventDefault();
@@ -234,7 +234,7 @@ const FiltersBar = data => {
         </div>
 
         <WrapperButton>
-          <MainButton type="submit" size="large" onClick={handleSubmit}>
+          <MainButton type="submit" size="large">
             Search
           </MainButton>
 
