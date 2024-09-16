@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" element={<NavLayout />}>
             <Route element={<FooterLayout />}>
               <Route index element={<HomePage />} />
-              <Route path="/favorites" element={<FavouritesPage />} />
+              <Route path="/favourites" element={<FavouritesPage />} />
             </Route>
             <Route path="/catalog" element={<CatalogPage />} />
           </Route>

@@ -20,7 +20,7 @@ const Header = () => {
           <ItemsLink to="/catalog">Catalog</ItemsLink>
         </ListItem>
         <ListItem>
-          <ItemsLink to="/favorites">Favorites</ItemsLink>
+          <ItemsLink to="/favourites">Favourites</ItemsLink>
         </ListItem>
       </ListNav>
     </HeaderWrapper>
