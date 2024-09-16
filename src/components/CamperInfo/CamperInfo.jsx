@@ -68,7 +68,7 @@ const CamperInfo = ({ data, onClose }) => {
                 gallery.map((item, index) => (
                   <GalleryItem key={index}>
                     <GalleryImgWrapper>
-                      <GalleryImg src={item} alt={item} />
+                      <GalleryImg src={item.thumb} alt={item} />
                     </GalleryImgWrapper>
                   </GalleryItem>
                 ))}

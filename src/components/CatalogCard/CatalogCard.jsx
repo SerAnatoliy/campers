@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavorite, deleteFavorite } from '../../store/favoritesSlice';
-import { selectFavorites } from '../../store/selectors';
+import { addFavourite, deleteFavourite } from '../../store/favouritesSlice';
+import { selectFavourites } from '../../store/selectors';
 import MainButton from '../MainButton/MainButton';
 import Slider from '../../components/Slider/Slider';
 import CamperInfo from '../../components/CamperInfo/CamperInfo';
@@ -64,14 +64,14 @@ const CatalogCard = ({ campers }) => {
     gas,
   } = campers;
 
-  const favorites = useSelector(selectFavorites);
+  const favourites = useSelector(selectFavourites);
   const dispatch = useDispatch();
 
-  const goFavorite = () => {
-    if (isFavourite(id, favorites)) {
-      dispatch(deleteFavorite(campers));
+  const goFavourite = () => {
+    if (isFavourite(id, favourites)) {
+      dispatch(deleteFavourite(campers));
     } else {
-      dispatch(addFavorite(campers));
+      dispatch(addFavourite(campers));
     }
   };
 
@@ -93,11 +93,11 @@ const CatalogCard = ({ campers }) => {
             <p>&euro;{correctPrice(price)}</p>
             <Hearts
               style={
-                isFavourite(id, favorites)
+                isFavourite(id, favourites)
                   ? { fill: '#E44848', stroke: '#E44848' }
                   : { fill: '#fff', stroke: '#101828' }
               }
-              onClick={goFavorite}
+              onClick={goFavourite}
               width={24}
               alt="Haert"
             />

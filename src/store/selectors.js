@@ -9,7 +9,7 @@ export const selectFiltered = state => state.adverts.filters.filters;
 export const selectIsLoading = state => state.adverts.isLoading;
 export const selectError = state => state.adverts.error;
 
-export const selectFavorites = state => state.favorites.items;
+export const selectFavourites = state => state.favorites.items;
 
 export const selectFilteredCampers = createSelector([selectAllCampers, selectFiltered], (campers, filters) => {
   return campers.filter(item => {

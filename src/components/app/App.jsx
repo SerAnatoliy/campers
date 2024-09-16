@@ -7,6 +7,8 @@ import Loaders from '../Loaders/Loaders';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
+const FavouritesPage = lazy(() => import('../../pages/FavouritesPage/FavouritesPage'));
+const PageNotFound = lazy(() => import('../../pages/PageNotFound/PageNotFound'));
 
 const App = () => {
   return (
@@ -16,11 +18,11 @@ const App = () => {
           <Route path="/" element={<NavLayout />}>
             <Route element={<FooterLayout />}>
               <Route index element={<HomePage />} />
-              {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+              <Route path="/favorites" element={<FavouritesPage />} />
             </Route>
             <Route path="/catalog" element={<CatalogPage />} />
           </Route>
-          {/* <Route path="*" element={<PageNotFound />} /> */}
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </ContainerApp>
