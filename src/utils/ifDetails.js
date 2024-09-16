@@ -1,7 +1,10 @@
 import { InfoItem } from '../components/CatalogCard/CatalogCard.module';
 
 export const renderIfDetails = (condition, icon, text) => {
-  return condition !== 0 && condition !== '' && renderInfoItem(icon, text);
+  if (condition) {
+    return renderInfoItem(icon, text);
+  }
+  return null;
 };
 
 const renderInfoItem = (icon, text) => {
