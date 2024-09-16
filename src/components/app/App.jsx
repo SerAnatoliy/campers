@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import NavLayout from '../Layout/HeaderLayout';
 import FooterLayout from '../Layout/FooterLayout';
-import { ContainerApp } from './App.module';
+import { ContainerApp } from '/App.module';
 import Loaders from '../Loaders/Loaders';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
