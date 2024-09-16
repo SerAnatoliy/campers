@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
-import { addFilters } from '../../store/advertsSlice';
-import { fetchCamperAll } from '../../store/operations';
+// import { addFilters } from '../../store/advertsSlice';
+// import { fetchCamperAll } from '../../store/operations';
 
 import MainButton from '../../components/MainButton/MainButton';
 import { MoreButton } from '../../components/MainButton/MainButton.styled';
@@ -36,7 +36,7 @@ import {
 } from './FiltersBar.module';
 
 const FiltersBar = data => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const initialStateLocation = '';
   const initialStateTransmission = {
