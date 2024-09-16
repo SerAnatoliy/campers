@@ -9,6 +9,7 @@ export const getCampers = async (page = 1) => {
 };
 
 export const getAllCampers = async () => {
-  const data = await axios.get();
+  const data = await axios.get('/campers');
+  console.log(data.data);
   return data.data;
 };

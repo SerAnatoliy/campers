@@ -14,8 +14,10 @@ import {
   SubTitlePlanning,
   InfoImg,
 } from './HomePage.module';
+import { getAllCampers } from '../../api/campersAPI';
 
 const HomePage = () => {
+  getAllCampers();
   return (
     <>
       <HeroWrapper>

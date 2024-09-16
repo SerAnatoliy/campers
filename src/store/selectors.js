@@ -12,6 +12,7 @@ export const selectError = state => state.adverts.error;
 export const selectFavourites = state => state.favorites.items;
 
 export const selectFilteredCampers = createSelector([selectAllCampers, selectFiltered], (campers, filters) => {
+  console.log('campers', campers);
   return campers.filter(item => {
     if (!item.location.toLowerCase().includes(filters.location.toLowerCase())) {
       return false;
