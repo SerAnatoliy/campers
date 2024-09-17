@@ -1,4 +1,4 @@
-<h1>TravelTrucks</h1>
+<h1>Campers</h1>
 
 <h2>Зміст</h2>
 
