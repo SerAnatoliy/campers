@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <FooterWrapper>
-        <p>develoter : Anatolii Serdiukov</p>
+        <p>developer : Anatolii Serdiukov</p>
       </FooterWrapper>
     </>
   );
