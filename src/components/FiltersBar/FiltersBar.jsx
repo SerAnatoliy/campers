@@ -1,8 +1,8 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-// import { addFilters } from '../../store/advertsSlice';
-// import { fetchCamperAll } from '../../store/operations';
+import { addFilters } from '../../store/advertsSlice';
+import { fetchCamperAll } from '../../store/operations';
 
 import MainButton from '../../components/MainButton/MainButton';
 import { MoreButton } from '../../components/MainButton/MainButton.styled';
@@ -36,7 +36,7 @@ import {
 } from './FiltersBar.module';
 
 const FiltersBar = data => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const initialStateLocation = '';
   const initialStateTransmission = {
@@ -80,11 +80,11 @@ const FiltersBar = data => {
     setForm({ ...form, vehicleType: value });
   };
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch(addFilters({ location, transmission, details, form }));
-  //   dispatch(fetchCamperAll(1));
-  // };
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(addFilters({ location, transmission, details, form }));
+    dispatch(fetchCamperAll(1));
+  };
 
   const handleReset = e => {
     e.preventDefault();
@@ -168,8 +168,13 @@ const FiltersBar = data => {
 
             <li>
               <CheckboxWrapper>
-                <CheckboxInput type="checkbox" name="shower" checked={details.shower} onChange={handleCheckboxChange} />
-                <CheckboxCheckmark checked={details.shower}>
+                <CheckboxInput
+                  type="checkbox"
+                  name="bathroom"
+                  checked={details.bathroom}
+                  onChange={handleCheckboxChange}
+                />
+                <CheckboxCheckmark checked={details.bathroom}>
                   <Bathroom style={{ width: '32', height: '32' }} />
                   Bathroom
                 </CheckboxCheckmark>
@@ -234,7 +239,7 @@ const FiltersBar = data => {
         </div>
 
         <WrapperButton>
-          <MainButton type="submit" size="large">
+          <MainButton type="submit" size="large" onClick={handleSubmit}>
             Search
           </MainButton>
 
